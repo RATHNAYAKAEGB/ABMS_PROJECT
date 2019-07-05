@@ -6,7 +6,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 @Entity
-public class WorkerGroupSalaryInfo {
+public class WorkerGroupSalaryInfo implements SuperEntity {
 
     @Id
     private String id;
@@ -18,19 +18,19 @@ public class WorkerGroupSalaryInfo {
     @OneToOne
     @JoinColumn(name = "EmpCatId", referencedColumnName = "EmpCatId")
     private
-    EmpCategory empCategory;
+    WorkerCategory workerCategory;
 
     public WorkerGroupSalaryInfo() {
     }
 
-    public WorkerGroupSalaryInfo(String id, String name, double nomarHoursPayment, double otyPayment, double bonuse, String createBy, EmpCategory empCategory) {
+    public WorkerGroupSalaryInfo(String id, String name, double nomarHoursPayment, double otyPayment, double bonuse, String createBy, WorkerCategory workerCategory) {
         this.setId(id);
         this.setName(name);
         this.setNomarHoursPayment(nomarHoursPayment);
         this.setOtyPayment(otyPayment);
         this.setBonuse(bonuse);
         this.setCreateBy(createBy);
-        this.setEmpCategory(empCategory);
+        this.setWorkerCategory(workerCategory);
     }
 
 
@@ -82,12 +82,12 @@ public class WorkerGroupSalaryInfo {
         this.createBy = createBy;
     }
 
-    public EmpCategory getEmpCategory() {
-        return empCategory;
+    public WorkerCategory getWorkerCategory() {
+        return workerCategory;
     }
 
-    public void setEmpCategory(EmpCategory empCategory) {
-        this.empCategory = empCategory;
+    public void setWorkerCategory(WorkerCategory workerCategory) {
+        this.workerCategory = workerCategory;
     }
 
     @Override
@@ -99,7 +99,7 @@ public class WorkerGroupSalaryInfo {
                 ", otyPayment=" + otyPayment +
                 ", bonuse=" + bonuse +
                 ", createBy='" + createBy + '\'' +
-                ", empCategory=" + empCategory +
+                ", workerCategory=" + workerCategory +
                 '}';
     }
 }

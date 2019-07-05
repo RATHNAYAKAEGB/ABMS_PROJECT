@@ -10,5 +10,5 @@ import java.util.List;
 @Repository
 public interface WorkersAttendenceRepository extends JpaRepository<WorkersAttendence,String> {
     WorkersAttendence findByWorkerId(String nic);
-    List<WorkersAttendence>findByWorkerIdaaAndWorikingDayBetween(String nic, Date sDate,Date eDate);
+    List<WorkersAttendence>findByWorkerIdAndWorikingDayBetween(String nic, Date sDate,Date eDate);
 }

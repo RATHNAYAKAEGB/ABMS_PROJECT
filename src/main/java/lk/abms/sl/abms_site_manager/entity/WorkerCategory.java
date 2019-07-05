@@ -4,16 +4,16 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class EmpCategory {
+public class WorkerCategory implements SuperEntity{
     @Id
-    private String EmpCatId;
+    private String empCatId;
     private String name;
     private String createBy;
 
-    public EmpCategory() {
+    public WorkerCategory() {
     }
 
-    public EmpCategory(String empCatId, String name, String createBy) {
+    public WorkerCategory(String empCatId, String name, String createBy) {
         setEmpCatId(empCatId);
         this.setName(name);
         this.setCreateBy(createBy);
@@ -21,11 +21,11 @@ public class EmpCategory {
 
 
     public String getEmpCatId() {
-        return EmpCatId;
+        return empCatId;
     }
 
     public void setEmpCatId(String empCatId) {
-        EmpCatId = empCatId;
+        this.empCatId = empCatId;
     }
 
     public String getName() {
@@ -46,8 +46,8 @@ public class EmpCategory {
 
     @Override
     public String toString() {
-        return "EmpCategory{" +
-                "EmpCatId='" + EmpCatId + '\'' +
+        return "WorkerCategory{" +
+                "empCatId='" + empCatId + '\'' +
                 ", name='" + name + '\'' +
                 ", createBy='" + createBy + '\'' +
                 '}';

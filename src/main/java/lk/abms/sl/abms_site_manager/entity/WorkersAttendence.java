@@ -4,11 +4,10 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-public class WorkersAttendence {
+public class WorkersAttendence implements SuperEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private
-    int attendenceId;
+    private int attendenceId;
     @Temporal(TemporalType.TIME)
     private
     Date onTime;

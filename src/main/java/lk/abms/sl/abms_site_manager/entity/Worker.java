@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-public class Worker {
+public class Worker implements SuperEntity {
     @Id
     private String nic;
     private String name;
@@ -15,14 +15,14 @@ public class Worker {
     private String ctratedBy;
     @ManyToOne
     @JoinColumn(referencedColumnName = "EmpCatId", name = "EmpCatId")
-    private EmpCategory empCateId;
+    private WorkerCategory empCateId;
     private boolean isActive;
 
     public Worker() {
     }
 
 
-    public Worker(String nic, String name, String address, String phone, Date regDate, String ctratedBy, EmpCategory empCateId, boolean isActive) {
+    public Worker(String nic, String name, String address, String phone, Date regDate, String ctratedBy, WorkerCategory empCateId, boolean isActive) {
         this.nic = nic;
         this.name = name;
         this.address = address;
@@ -81,11 +81,11 @@ public class Worker {
         this.ctratedBy = ctratedBy;
     }
 
-    public EmpCategory getEmpCateId() {
+    public WorkerCategory getEmpCateId() {
         return empCateId;
     }
 
-    public void setEmpCateId(EmpCategory empCateId) {
+    public void setEmpCateId(WorkerCategory empCateId) {
         this.empCateId = empCateId;
     }
 

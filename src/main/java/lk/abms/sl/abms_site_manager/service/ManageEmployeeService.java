@@ -1,6 +1,5 @@
 package lk.abms.sl.abms_site_manager.service;
 
-import lk.abms.sl.abms_site_manager.entity.EmpCategory;
 import lk.abms.sl.abms_site_manager.entity.Worker;
 import lk.abms.sl.abms_site_manager.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
